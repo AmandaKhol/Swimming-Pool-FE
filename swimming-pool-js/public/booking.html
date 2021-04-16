@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Swimming Pool Booking Form</title>
+    <link rel="icon" href="assets/images/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+
+  <body class="page">
+    <main class="main">
+      <h1>Form</h1>
+      <h1>Booking Form</h1>
+      <p>Please, complete the form in order to confirm your booking</p>
+      <form action="">
+        <label class="form__label" for="name">Name and surname: </label>
+        <input
+          class="form__input js-name js-input-text"
+          type="text"
+          name="name"
+          placeholder="Name and surname..."
+          required
+        />
+
+        <label class="form__label" for="phone">Phone:</label>
+        <input
+          class="form__input js-tel js-input-text"
+          type="phone"
+          name="phone"
+          id="phone"
+          placeholder="+34 666666666"
+        />
+
+        <label class="form__label" for="card">Card number:</label>
+        <input
+          class="form__input js-card js-input-text"
+          type="text"
+          name="card"
+          id="card"
+          placeholder="N1857132..."
+          required
+        />
+      </form>
+      <button class="btn-confirm js-confirm-btn">
+        <i class="fa fa-address-card-o" aria-hidden="true"></i>Confirm!
+      </button>
+
+      <a class="link link__back" href="index.html">Back!</a>
+    </main>
+    <footer class="page__footer">
+      <small>Amanda Khol &copy; 2021</small>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

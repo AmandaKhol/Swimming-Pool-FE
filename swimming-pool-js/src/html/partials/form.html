@@ -1,0 +1,34 @@
+<h1>Booking Form</h1>
+<p>Please, complete the form in order to confirm your booking</p>
+<form action="">
+  <label class="form__label" for="name">Name and surname: </label>
+  <input
+    class="form__input js-name js-input-text"
+    type="text"
+    name="name"
+    placeholder="Name and surname..."
+    required
+  />
+
+  <label class="form__label" for="phone">Phone:</label>
+  <input
+    class="form__input js-tel js-input-text"
+    type="phone"
+    name="phone"
+    id="phone"
+    placeholder="+34 666666666"
+  />
+
+  <label class="form__label" for="card">Card number:</label>
+  <input
+    class="form__input js-card js-input-text"
+    type="text"
+    name="card"
+    id="card"
+    placeholder="N1857132..."
+    required
+  />
+</form>
+<button class="btn-confirm js-confirm-btn">
+  <i class="fa fa-address-card-o" aria-hidden="true"></i>Confirm!
+</button>

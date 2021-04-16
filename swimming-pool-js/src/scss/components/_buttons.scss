@@ -1,0 +1,30 @@
+.btn-search,
+.btn-confirm {
+  background-color: $color-button;
+  box-sizing: border-box;
+  color: $color-bg;
+  border: none;
+  border-radius: 5px;
+  font-family: $font-button;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-left: 20px;
+}
+
+.btn-reset {
+  background-color: $color-button;
+  box-sizing: border-box;
+  color: $color-bg;
+  border: none;
+  border-radius: 5px;
+  font-family: $font-button;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  width: 100px;
+}
+
+.close-icon {
+  margin-top: 5px;
+  color: $color-button;
+}

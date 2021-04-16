@@ -1,0 +1,31 @@
+.fav {
+  &__section {
+    box-sizing: border-box;
+    border: $color-favorites-margin 0.5px solid;
+    border-radius: 5px;
+    min-height: 50px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    @include tablet() {
+      justify-content: flex-start;
+      max-width: 800px;
+    }
+  }
+  &__title {
+    font-size: 28px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  &__list {
+    @include tablet() {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
