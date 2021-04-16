@@ -14,8 +14,15 @@ function handleSearch() {
 function handleStreet(ev) {
   hoursList.innerHTML = '';
   const streetId = ev.currentTarget.dataset['id'];
-  const street = pool.streets.find((street) => street.id === streetId);
+  street = pool.streets.find((street) => street.id === streetId);
 
   const streetHours = street.hours;
   renderStreetHoursList(streetHours);
+  addEventListenenerHours();
+}
+
+function handleSchedule(ev) {
+  restartMessage();
+  const hour = ev.currentTarget.innerHTML;
+  bookingDetails.appendChild(createMessage(pool, street, hour));
 }

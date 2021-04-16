@@ -30,3 +30,20 @@ function createHour(hour) {
   hourItem.appendChild(hourItemText);
   return hourItem;
 }
+
+function createMessage(pool, street, hour) {
+  const paragraph = document.createElement('p');
+  paragraph.classList.add('js-message');
+  const paragraphText = document.createTextNode(
+    `You are going to book in ${pool.name}, on the street number ${street.id} at ${hour}`
+  );
+  paragraph.appendChild(paragraphText);
+  return paragraph;
+}
+
+function restartMessage() {
+  const bookingMessage = document.querySelector('.js-message');
+  if (bookingMessage !== null) {
+    bookingMessage.parentNode.removeChild(bookingMessage);
+  }
+}

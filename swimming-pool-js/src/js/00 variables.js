@@ -8,8 +8,10 @@ const searchButton = document.querySelector('.js-search');
 const streetList = document.querySelector('.js-street-list');
 const hoursList = document.querySelector('.js-hours');
 const streetItem = document.querySelector('.js-street');
+const bookingDetails = document.querySelector('.js-booking-details');
 
 let pool = '-';
+let street = '';
 const centers = [
   {
     id: 'al',

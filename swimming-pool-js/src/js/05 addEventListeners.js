@@ -7,3 +7,10 @@ function addEventListenerStreets() {
     street.addEventListener('click', handleStreet);
   }
 }
+
+function addEventListenenerHours() {
+  const streetHours = document.querySelectorAll('.js-hour');
+  for (const hour of streetHours) {
+    hour.addEventListener('click', handleSchedule);
+  }
+}

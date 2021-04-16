@@ -8,8 +8,10 @@ const searchButton = document.querySelector('.js-search');
 const streetList = document.querySelector('.js-street-list');
 const hoursList = document.querySelector('.js-hours');
 const streetItem = document.querySelector('.js-street');
+const bookingDetails = document.querySelector('.js-booking-details');
 
 let pool = '-';
+let street = '';
 const centers = [
   {
     id: 'al',
@@ -120,6 +122,23 @@ function createHour(hour) {
   return hourItem;
 }
 
+function createMessage(pool, street, hour) {
+  const paragraph = document.createElement('p');
+  paragraph.classList.add('js-message');
+  const paragraphText = document.createTextNode(
+    `You are going to book in ${pool.name}, on the street number ${street.id} at ${hour}`
+  );
+  paragraph.appendChild(paragraphText);
+  return paragraph;
+}
+
+function restartMessage() {
+  const bookingMessage = document.querySelector('.js-message');
+  if (bookingMessage !== null) {
+    bookingMessage.parentNode.removeChild(bookingMessage);
+  }
+}
+
 searchButton.addEventListener('click', handleSearch);
 formElement.addEventListener('submit', handleForm);
 
@@ -127,6 +146,13 @@ function addEventListenerStreets() {
   const poolStreets = document.querySelectorAll('.js-street');
   for (const street of poolStreets) {
     street.addEventListener('click', handleStreet);
+  }
+}
+
+function addEventListenenerHours() {
+  const streetHours = document.querySelectorAll('.js-hour');
+  for (const hour of streetHours) {
+    hour.addEventListener('click', handleSchedule);
   }
 }
 
@@ -146,10 +172,17 @@ function handleSearch() {
 function handleStreet(ev) {
   hoursList.innerHTML = '';
   const streetId = ev.currentTarget.dataset['id'];
-  const street = pool.streets.find((street) => street.id === streetId);
+  street = pool.streets.find((street) => street.id === streetId);
 
   const streetHours = street.hours;
   renderStreetHoursList(streetHours);
+  addEventListenenerHours();
+}
+
+function handleSchedule(ev) {
+  restartMessage();
+  const hour = ev.currentTarget.innerHTML;
+  bookingDetails.appendChild(createMessage(pool, street, hour));
 }
 
 //Inicialization
